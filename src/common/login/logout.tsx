@@ -1,15 +1,8 @@
 import * as React from 'react';
-import * as Cookies from 'js-cookie';
-import { useHistory } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import Button from '@material-ui/core/Button';
 
-interface Props {}
-
-export const logoutHandlerComponent: React.FC<Props> = (props) => {
-  const history = useHistory();
-  React.useEffect(() => {
-    Cookies.remove('session');
-    history.push('/login');
-    window.location.reload();
-  }, [history]);
-  return <div>Logging out!</div>;
+export const logoutComponent: React.FC = () => {
+  const { logout } = useAuth0();
+  return (<Button onClick={() => logout({ returnTo: window.location.origin })} >Logout</Button>);
 };

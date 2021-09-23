@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { ClientsContainerComponent } from 'layout';
+import { Auth0Provider } from '@auth0/auth0-react';
 import {
   Route,
   BrowserRouter as Router,
@@ -9,40 +10,26 @@ import {
 } from 'react-router-dom';
 import { App } from 'scenes/app';
 
-import { LoginComponent, logoutHandlerComponent } from 'common/login';
-import { getSessionCookie } from 'common/cookies';
+import { LoginComponent, logoutComponent } from 'common/login';
+import { UserProfileComponent } from 'pods/userProfile';
 
-
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        getSessionCookie() !== null ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{ pathname: '/login', state: { from: props.location } }}
-          />
-        )
-      }
-    />
-  );
-};
-
-const routing = (
-  <Router>
-    <Switch>
-      <PrivateRoute exact path='/' component={App} />
-      <Route exact path='/login' component={LoginComponent} />
-      <PrivateRoute exact path='/logout' component={logoutHandlerComponent} />
-      <PrivateRoute
-        exact
-        path='/users/:userId'
-        component={ClientsContainerComponent}
-      />
-    </Switch>
-  </Router>
+ReactDOM.render(
+  <Auth0Provider
+    domain='vtes-closet.eu.auth0.com'
+    clientId='DeY17E2VSYvIhgZGkzhuX9uWineBxvsn'
+    redirectUri={window.location.origin} // podría ser /
+  >
+    <Router>
+      <Switch>
+        <Route exact path='/' component={App} />
+        <Route exact path='/profile' component={ UserProfileComponent} />
+        <Route
+          exact
+          path='/users/:userId'
+          component={ClientsContainerComponent}
+        />
+      </Switch>
+    </Router>
+  </Auth0Provider>,
+  document.getElementById('root')
 );
-
-ReactDOM.render(routing, document.getElementById('root'));

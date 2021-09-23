@@ -1,25 +1,24 @@
-import { getSessionCookie } from 'common/cookies';
-import { LoginType } from 'commonApp/interfaces';
+import { LoginComponent, logoutComponent } from 'common/login';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 export const App: React.FC<{}> = () => {
-  const cookieValues: LoginType = JSON.parse(getSessionCookie());
+
 
   return (
     <>
-      <h1>Home APP</h1>
+      <h1>Vtes Closet</h1>
       <div>
         <nav>
           <ul>
             <li>
-              <Link to={`/login`}>Login</Link>
+              <Link to={`/login`} component={LoginComponent}/>
             </li>
             <li>
-              <Link to={`/logout`}>Logout</Link>
+              <Link to={`/logout`} component={logoutComponent}/>
             </li>
             <li>
-              <Link to={`/collection/${cookieValues.userId}`}>Collection</Link>
+              <Link to={`/profile`}>User Profile</Link>
             </li>
           </ul>
         </nav>
