@@ -1,0 +1,63 @@
+{
+  "name": "boiler-plate",
+  "version": "1.0.0",
+  "description": "Home Fitness App for React ussing TS",
+  "main": "index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "TBD"
+  },
+  "scripts": {
+    "start": "webpack-dev-server  --mode development",
+    "build": "webpack  --mode development"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "hooks"
+  ],
+  "author": "Jehú Sagardoy Martín",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@types/classnames": "^2.2.9",
+    "@types/deep-freeze": "^0.1.2",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.19",
+    "@types/node": "^12.11.1",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/redux-mock-store": "^1.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "style-loader": "^1.0.0",
+    "typescript": "^3.6.4",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.50",
+    "core-js": "^3.3.2",
+    "dtslint": "^3.4.1",
+    "final-form": "^4.19.1",
+    "js-cookie": "^2.2.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-final-form": "^6.4.0",
+    "react-router-dom": "^5.1.2",
+    "typeface-roboto": "0.0.75"
+  }
+}
