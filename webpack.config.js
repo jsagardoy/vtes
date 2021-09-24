@@ -30,12 +30,12 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
-    contentBase: './dist', // Content base
-    inline: true, // Enable watch and live reload
+    liveReload: true, // Enable watch and live reload
     host: 'localhost',
+    open:['/'],
     port: 8080,
-    stats: 'errors-only',
-    open: defaultBrowser,
+    open: true,
+    static: path.join(__dirname, 'public')
   },
   module: {
     rules: [
@@ -67,7 +67,7 @@ module.exports = {
       filename: 'index.html', //Name of file in ./dist/
       template: 'index.html', //Name of template in ./src
       hash: true,
-      favicon: '../public/favicon.ico'
+      favicon: '../public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
