@@ -1,7 +1,7 @@
 {
-  "name": "boiler-plate",
+  "name": "vtes_closet",
   "version": "1.0.0",
-  "description": "Home Fitness App for React ussing TS",
+  "description": "Vtes app",
   "main": "index.tsx",
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^5.0.0-beta.5",
     "@mui/material": "^5.0.1",
+    "@react-keycloak/web": "^3.4.0",
     "@types/react": "^17.0.24",
     "core-js": "^3.18.0",
     "dtslint": "^4.1.6",
